@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="473px" height="481px" viewBox="0 0 473 481" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 2</title>
+    <g id="other" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2">
+            <g id="Group" transform="translate(13.000000, 51.000000)">
+                <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="0.5" y="0.5" width="139" height="109" rx="8"></rect>
+                <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="320.5" y="320.5" width="139" height="109" rx="8"></rect>
+                <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="0.5" y="0.5" width="139" height="109" rx="8"></rect>
+                <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="160.5" y="144.5" width="139" height="109" rx="8"></rect>
+                <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="0.5" y="320.5" width="139" height="109" rx="8"></rect>
+                <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="320.5" y="0.5" width="139" height="109" rx="8"></rect>
+                <path id="Line-2" d="M148.5,59 L139.5,54.5 L148.5,50 L148.5,54 L201,54 L201,145 L200,145 L200,55 L148.5,55 L148.5,59 Z" fill="#979797" fill-rule="nonzero"></path>
+                <path id="Line" d="M311.535695,50.4332124 L320.499985,55.0039369 L311.464832,59.4329334 L311.496,55.433 L257,55.003 L257,145 L256,145 L256,53.9960475 L256.503937,54.0000155 L311.503,54.433 L311.535695,50.4332124 Z" fill="#979797" fill-rule="nonzero"></path>
+                <path id="Line-3" d="M200.5,253 L205,262 L201,262 L201,376 L139,376 L139,375 L200,375 L200,262 L196,262 L200.5,253 Z" fill="#979797" fill-rule="nonzero"></path>
+                <path id="Line-4" d="M256.5,253 L261,262 L257,262 L257,375 L320,375 L320,376 L256,376 L256,262 L252,262 L256.5,253 Z" fill="#979797" fill-rule="nonzero"></path>
+            </g>
+            <text id="C2-.x-.y" font-family="Zpix" font-size="24" font-style="condensed" font-weight="normal" fill="#060404">
+                <tspan x="64" y="84">C2</tspan>
+                <tspan x="64" y="108">.x</tspan>
+                <tspan x="64" y="132">.y</tspan>
+            </text>
+            <text id="C3-.w-.z" font-family="Zpix" font-size="24" font-style="condensed" font-weight="normal" fill="#060404">
+                <tspan x="388" y="90">C3</tspan>
+                <tspan x="388" y="114">.w</tspan>
+                <tspan x="388" y="138">.z</tspan>
+            </text>
+            <text id="C1-.x-.y" font-family="Zpix" font-size="24" font-style="condensed" font-weight="normal" fill="#060404">
+                <tspan x="229" y="233">C1</tspan>
+                <tspan x="229" y="257">.x</tspan>
+                <tspan x="229" y="281">.y</tspan>
+            </text>
+            <text id="I1-.name" font-family="Zpix" font-size="24" font-style="condensed" font-weight="normal" fill="#060404">
+                <tspan x="42" y="420">I1</tspan>
+                <tspan x="42" y="444">.name</tspan>
+            </text>
+            <text id="I2-.name" font-family="Zpix" font-size="24" font-style="condensed" font-weight="normal" fill="#060404">
+                <tspan x="367" y="420">I2</tspan>
+                <tspan x="367" y="444">.name</tspan>
+            </text>
+            <text id="Super-Class" font-family="Zpix" font-size="24" font-style="condensed" font-weight="normal" fill="#FFFFFF">
+                <tspan x="0" y="18">Super Class</tspan>
+            </text>
+            <text id="Object" font-family="Zpix" font-size="24" font-style="condensed" font-weight="normal" fill="#FFFFFF">
+                <tspan x="13" y="348">Object</tspan>
+            </text>
+            <text id="Object" font-family="Zpix" font-size="24" font-style="condensed" font-weight="normal" fill="#FFFFFF">
+                <tspan x="345" y="348">Object</tspan>
+            </text>
+            <text id="Super-Class" font-family="Zpix" font-size="24" font-style="condensed" font-weight="normal" fill="#FFFFFF">
+                <tspan x="317" y="18">Super Class</tspan>
+            </text>
+            <text id="SubClass" font-family="Zpix" font-size="24" font-style="condensed" font-weight="normal" fill="#FFFFFF">
+                <tspan x="40" y="260">SubClass</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

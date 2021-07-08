@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="627px" height="346px" viewBox="0 0 627 346" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Module-map</title>
+    <g id="other" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Module-map">
+            <rect id="Rectangle" stroke="#979797" fill-opacity="0.6" fill="#9FCEFA" x="48.5" y="0.5" width="445" height="345" rx="22"></rect>
+            <g id="Group-2" transform="translate(0.000000, 148.500000)" fill="#000000">
+                <rect id="Rectangle" x="0" y="11.5" width="72" height="27"></rect>
+                <polygon id="Triangle" transform="translate(88.500000, 25.500000) rotate(90.000000) translate(-88.500000, -25.500000) " points="88.5 7.5 114 43.5 63 43.5"></polygon>
+            </g>
+            <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="113.5" y="139.5" width="90" height="67" rx="9"></rect>
+            <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="328.5" y="58.5" width="90" height="67" rx="9"></rect>
+            <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" x="328.5" y="221.5" width="90" height="67" rx="9"></rect>
+            <rect id="Rectangle" stroke="#646288" fill-opacity="0.401404748" fill="#000000" x="527.5" y="10.5" width="90" height="324" rx="9"></rect>
+            <text id="Top" font-family="Zpix" font-size="24" font-style="condensed" font-weight="normal" fill="#000000">
+                <tspan x="113" y="59">Top</tspan>
+            </text>
+            <text id="b.py" font-family="Zpix" font-size="24" font-style="condensed" font-weight="normal" fill="#000000">
+                <tspan x="344" y="98">b.py</tspan>
+            </text>
+            <text id="c.py" font-family="Zpix" font-size="24" font-style="condensed" font-weight="normal" fill="#000000">
+                <tspan x="345" y="261">c.py</tspan>
+            </text>
+            <text id="a.py" font-family="Zpix" font-size="24" font-style="condensed" font-weight="normal" fill="#000000">
+                <tspan x="128" y="178">a.py</tspan>
+            </text>
+            <text id="Module" font-family="Zpix" font-size="24" font-style="condensed" font-weight="normal" fill="#000000">
+                <tspan x="338" y="47">Module</tspan>
+            </text>
+            <text id="Python-standard-libr" font-family="Zpix" font-size="18" font-style="condensed" font-weight="normal" line-spacing="32" fill="#FFFFFF">
+                <tspan x="539.6" y="106">Python </tspan>
+                <tspan x="528.8" y="138">standard </tspan>
+                <tspan x="534.2" y="170">library </tspan>
+                <tspan x="539.6" y="202">module</tspan>
+            </text>
+            <path id="Line-5" d="M319.5,87.5 L328.5,92 L319.5,96.5 L319.5,92.5 L255,92.5 L255,174 L203,174 L203,173 L254,173 L254,91.5 L319.5,91.5 L319.5,87.5 Z" fill="#0C0000" fill-rule="nonzero"></path>
+            <path id="Line-6" d="M354.5,125 L359,134 L355,134 L355,221 L354,221 L354,134 L350,134 L354.5,125 Z" fill="#000000" fill-rule="nonzero"></path>
+            <path id="Line-7" d="M393,125 L393,212 L397,212 L392.5,221 L388,212 L392,212 L392,125 L393,125 Z" fill="#000000" fill-rule="nonzero"></path>
+            <path id="Line-8" d="M518,93 L527,97.5 L518,102 L518,98 L418,98 L418,97 L518,97 L518,93 Z" fill="#000000" fill-rule="nonzero"></path>
+            <path id="Line-8" d="M517,257 L526,261.5 L517,266 L517,262 L417,262 L417,261 L517,261 L517,257 Z" fill="#000000" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>
