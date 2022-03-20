@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Carrgan Blog</title>
+        <link>https://carrgan.github.io/blog</link>
+        <description>Carrgan Blog</description>
+        <lastBuildDate>Sun, 20 Mar 2022 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[V2 Post]]></title>
+            <link>https://carrgan.github.io/blog/long-blog-post</link>
+            <guid>long-blog-post</guid>
+            <pubDate>Sun, 20 Mar 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[距离 carrgan.io V1 已经过去快一年了，一年之前刚刚从学校出来，还没有参加工作，利用闲暇时光发布了V1。]]></description>
+            <content:encoded><![CDATA[<p>距离 carrgan.io V1 已经过去快一年了，一年之前刚刚从学校出来，还没有参加工作，利用闲暇时光发布了V1。</p><p><img loading="lazy" alt="v1" src="/assets/images/V1-0423b21d8388e781fff462cc0c2f27e4.png" width="3076" height="1974"></p><p>V1用<a href="https://docs.pmnd.rs/" target="_blank" rel="noopener noreferrer">Pmndrs</a>为React封装的<a href="https://threejs.org/" target="_blank" rel="noopener noreferrer">Three.js</a>加载了一个在开源社区<a href="https://sketchfab.com/feed" target="_blank" rel="noopener noreferrer">Sketchfab</a>找的，免费使用的3D模型。</p><p>由于网站托管在github，有一些网络和性能原因，还有这个模型不是我自己建的，感觉有很多限制，我想实现的很多细节功能（点击一个3D物体，触发指定的事件）不能被实现，所以放弃了这一版。</p><p>本来想要自己用<a href="https://www.blender.org/" target="_blank" rel="noopener noreferrer">Blender</a>自己建一个3D模型，可是这个软件实在是过于复杂，不值得为了这个投入大量时间去学习。</p><p>最后使用<a href="https://www.sketch.com" target="_blank" rel="noopener noreferrer">Sketch</a>画了一颗星球来作为Logo和主页。</p><p>在开发V2的时候遇到了一些问题，一开始写好之后发现Safari的图形处理性能很低，由于SVG加了一些阴影和光影效果导致了渲染的卡顿，迫不得之下只能让Safari不渲染阴影和光影。</p><p>之后使用<code>@keyframe</code>写了动画放在全局的CSS文件中，结果Docusaurus打包的时候不能正确的将<code>@keyframe</code>写入打包好的CSS文件，由于Docusaurus使用了<a href="https://www.docusaurus.io/zh-CN/docs/advanced/ssg" target="_blank" rel="noopener noreferrer">SSG</a>渲染，想要手动的把CSS导入很麻烦，只能打包好再手动写入<code>index.html</code>。</p><p>最后决定选用JS动画库，在比较了多款JS库之后，选择了<a href="https://animejs.com" target="_blank" rel="noopener noreferrer">AnimeJS</a>非常强大的JS库，同样使用了React的封装版<a href="https://github.com/plus1tv/react-anime/blob/HEAD/documentation.md" target="_blank" rel="noopener noreferrer">react-anime</a>.</p><p><strong>在V2.1版本中打算处理星星和星球的点击事件</strong></p>]]></content:encoded>
+            <category>New Version</category>
+        </item>
+    </channel>
+</rss>
