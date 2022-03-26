@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Carrgan Blog</title>
+        <link>https://carrgan.github.io/life</link>
+        <description>Carrgan Blog</description>
+        <lastBuildDate>Sat, 26 Mar 2022 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[A Clockwork Orange]]></title>
+            <link>https://carrgan.github.io/life/move/a-clockwork-orange</link>
+            <guid>move/a-clockwork-orange</guid>
+            <pubDate>Sat, 26 Mar 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[He was a menace.]]></description>
+            <content:encoded><![CDATA[<p>He was a menace.</p><p>We put him away for his own protection.</p><p>And also for yours.</p><p>We put him away where he can’t do you harm.</p><p>You see, we are looking after your interests.</p><p>We are interested in you.</p><p>When you leave, you’ll have no worries. We’ll see to everything.A good job on a good salary.</p><p>We always help our friends, don’t we?</p><div><div class="videoContainer_EKfo"><video style="filter:brightness(60%)" controlslist="nodownload" width="100%" src="https://f.video.weibocdn.com/0018WpLigx07DENg0sFO010412006h9z0E010.mp4?label=mp4_720p&amp;template=898x540.25.0&amp;trans_finger=721584770189073627c6ee9d880087b3&amp;media_id=4510068796751875&amp;tp=8x8A3El:YTkl0eM8&amp;us=0&amp;ori=1&amp;bf=4&amp;ot=h&amp;lp=00002njT6N&amp;ps=mZ6WB&amp;uid=3VOy30&amp;ab=3915-g1&amp;Expires=1648299805&amp;ssig=GwBr7nakJu&amp;KID=unistore,video"></video><div class="playButton_Xh6C"><svg class="icon" width="34" height="34" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M785.916 378.115C621.622 289.254 522.65 200.413 358.355 111.53 194.06 22.643 111.93 67.101 111.93 244.802v533.194c0 177.75 82.151 222.18 246.425 133.341 164.295-88.93 263.266-177.75 427.56-266.611 164.273-88.862 164.273-177.772 0-266.611zm0 0"></path></svg></div></div></div>]]></content:encoded>
+            <category>Move</category>
+        </item>
+    </channel>
+</rss>

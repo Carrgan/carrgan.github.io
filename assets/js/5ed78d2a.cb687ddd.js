@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcarrgan_io=self.webpackChunkcarrgan_io||[]).push([[6456],{1976:function(e){e.exports=JSON.parse('{"Move":{"allTagsPath":"/life/tags","slug":"/life/tags/move","name":"Move","count":1,"permalink":"/life/tags/move"}}')}}]);
