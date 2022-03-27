@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcarrgan_io=self.webpackChunkcarrgan_io||[]).push([[2535],{5641:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"\u7528Hook\u505a\u9ad8\u7ea7\u5c01\u88c5","permalink":"/blog/react/hook/advance-encapsulation"},{"title":"V2 Post","permalink":"/blog/v2/post"}]}')}}]);
