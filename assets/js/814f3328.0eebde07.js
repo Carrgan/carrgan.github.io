@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcarrgan_io=self.webpackChunkcarrgan_io||[]).push([[2535],{5641:function(t){t.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"V2.1 Post","permalink":"/blog/v2.1-post"},{"title":"V2 Post","permalink":"/blog/v2-post"}]}')}}]);

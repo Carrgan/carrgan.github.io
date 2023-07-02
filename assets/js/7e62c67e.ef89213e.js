@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcarrgan_io=self.webpackChunkcarrgan_io||[]).push([[293],{2908:function(a){a.exports=JSON.parse('{"allTagsPath":"/tech-blog/tags","slug":"/tech-blog/tags/react","name":"React","count":1,"permalink":"/tech-blog/tags/react"}')}}]);

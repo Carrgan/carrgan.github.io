@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcarrgan_io=self.webpackChunkcarrgan_io||[]).push([[7433],{2792:function(s){s.exports=JSON.parse('{"allTagsPath":"/tech-blog/tags","slug":"/tech-blog/tags/css","name":"CSS","count":1,"permalink":"/tech-blog/tags/css"}')}}]);

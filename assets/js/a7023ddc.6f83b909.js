@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcarrgan_io=self.webpackChunkcarrgan_io||[]).push([[1713],{3457:function(e){e.exports=JSON.parse('{"New Version":{"allTagsPath":"/blog/tags","slug":"/blog/tags/new-version","name":"New Version","count":2,"permalink":"/blog/tags/new-version"}}')}}]);
