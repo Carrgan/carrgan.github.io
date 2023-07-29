@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcarrgan_io=self.webpackChunkcarrgan_io||[]).push([[3306],{8862:function(a){a.exports=JSON.parse('{"allTagsPath":"/tech-blog/tags","slug":"/tech-blog/tags/front-end","name":"Front-End","count":3,"permalink":"/tech-blog/tags/front-end"}')}}]);
