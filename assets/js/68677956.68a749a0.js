@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcarrgan_io=self.webpackChunkcarrgan_io||[]).push([[7966],{3818:function(e){e.exports=JSON.parse('{"permalink":"/life/tags/english","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"previousPage":null,"nextPage":null,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

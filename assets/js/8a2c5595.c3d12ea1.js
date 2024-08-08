@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcarrgan_io=self.webpackChunkcarrgan_io||[]).push([[7502],{8106:function(e){e.exports=JSON.parse('{"permalink":"/life/tags/lean","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"previousPage":null,"nextPage":null,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

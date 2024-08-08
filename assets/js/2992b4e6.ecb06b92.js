@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcarrgan_io=self.webpackChunkcarrgan_io||[]).push([[574],{2811:function(a){a.exports=JSON.parse('{"allTagsPath":"/tech-blog/tags","slug":"/tech-blog/tags/code-beat","name":"Code beat","count":1,"permalink":"/tech-blog/tags/code-beat"}')}}]);
