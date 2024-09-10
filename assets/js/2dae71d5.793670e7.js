@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcarrgan_io=self.webpackChunkcarrgan_io||[]).push([[3514],{5301:e=>{e.exports=JSON.parse('{"tags":[{"label":"Lean","permalink":"/life/tags/lean","count":1},{"label":"English","permalink":"/life/tags/english","count":1},{"label":"Move","permalink":"/life/tags/move","count":1}]}')}}]);

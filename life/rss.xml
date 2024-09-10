@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Carrgan universe Blog</title>
+        <link>https://carrgan.github.io/life</link>
+        <description>Carrgan universe Blog</description>
+        <lastBuildDate>Fri, 08 Sep 2023 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>zh-Hans</language>
+        <item>
+            <title><![CDATA[Start]]></title>
+            <link>https://carrgan.github.io/life/lean/english-blog/1</link>
+            <guid>https://carrgan.github.io/life/lean/english-blog/1</guid>
+            <pubDate>Fri, 08 Sep 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[We can start from:]]></description>
+            <content:encoded><![CDATA[<p>We can start from:</p>
+<ol>
+<li>
+<p><strong>Verb Tenses</strong>: English has several verb tenses, including the present, past, and future tenses. Each tense is used to indicate when an action takes place. If you have any questions about a specific tense or when to use it, feel free to ask.</p>
+</li>
+<li>
+<p><strong>Articles (a, an, the)</strong>: Articles are important in English and can be tricky. "A" and "an" are indefinite articles used before nouns to refer to non-specific items, while "the" is the definite article used before nouns when referring to something specific.</p>
+</li>
+<li>
+<p><strong>Subject-Verb Agreement</strong>: It's important for the subject and verb in a sentence to agree in terms of number (singular or plural). For example, "She walks" (singular subject and verb) vs. "They walk" (plural subject and verb).</p>
+</li>
+<li>
+<p><strong>Pronouns</strong>: Pronouns like "he," "she," "it," "they," "we," etc., are used to replace nouns to avoid repetition. Understanding when and how to use pronouns correctly is important.</p>
+</li>
+<li>
+<p><strong>Prepositions</strong>: Prepositions are words like "in," "on," "under," "above," etc., that show the relationship between nouns and other elements in a sentence. They can be challenging because they often don't have direct translations in other languages.</p>
+</li>
+<li>
+<p><strong>Conditional Sentences</strong>: Conditional sentences express hypothetical situations and come in different forms, such as first conditional (likely to happen), second conditional (hypothetical but possible), and third conditional (past hypothetical).</p>
+</li>
+<li>
+<p><strong>Relative Clauses</strong>: These clauses provide additional information about a noun in a sentence. They often start with words like "who," "which," or "that." Understanding how to use relative clauses can improve your sentence structure.</p>
+</li>
+<li>
+<p><strong>Direct and Indirect Speech</strong>: Knowing how to change direct speech (quoting someone's exact words) into indirect speech (reporting what someone said) is important for reporting conversations or information.</p>
+</li>
+</ol>
+<p>In English, "significant" is often used to emphasize that something is notable, noteworthy, or considerable in size, extent, or importance. In this context, it emphasizes that the distance between your home and the town is quite substantial.</p>]]></content:encoded>
+            <category>Lean</category>
+            <category>English</category>
+        </item>
+        <item>
+            <title><![CDATA[A Clockwork Orange]]></title>
+            <link>https://carrgan.github.io/life/move/a-clockwork-orange</link>
+            <guid>https://carrgan.github.io/life/move/a-clockwork-orange</guid>
+            <pubDate>Sat, 26 Mar 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[He was a menace.]]></description>
+            <content:encoded><![CDATA[<p>He was a menace.</p>
+<p>We put him away for his own protection.</p>
+<p>And also for yours.</p>
+<p>We put him away where he can’t do you harm.</p>
+<p>You see, we are looking after your interests.</p>
+<p>We are interested in you.</p>
+<p>When you leave, you’ll have no worries. We’ll see to everything. A good job on a good salary.</p>
+<p>We always help our friends, don’t we?</p>
+<div class="full-container"><iframe class="full-content" src="//player.bilibili.com/player.html?high_quality=1&amp;danmaku=0&amp;bvid=BV1Hy4y1V7BD&amp;page=1" scrolling="no" frameborder="no" width="100%" height="200px" allowfullscreen=""></iframe></div>]]></content:encoded>
+            <category>Move</category>
+        </item>
+    </channel>
+</rss>

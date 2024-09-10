@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcarrgan_io=self.webpackChunkcarrgan_io||[]).push([[8121],{8070:e=>{e.exports=JSON.parse('{"tags":[{"label":"New Version","permalink":"/blog/tags/new-version","count":3}]}')}}]);

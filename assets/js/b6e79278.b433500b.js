@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcarrgan_io=self.webpackChunkcarrgan_io||[]).push([[2531],{1238:e=>{e.exports=JSON.parse('{"tags":[{"label":"Front end","permalink":"/notes/tags/front-end","count":1}]}')}}]);

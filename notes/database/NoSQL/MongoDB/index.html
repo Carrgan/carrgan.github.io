@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-notes docs-version-current docs-doc-page docs-doc-id-database/NoSQL/MongoDB" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.4.0">
+<title data-rh="true">MongoDB | Carrgan universe</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://carrgan.github.io/notes/database/NoSQL/MongoDB"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-notes-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-notes-current"><meta data-rh="true" property="og:title" content="MongoDB | Carrgan universe"><meta data-rh="true" name="description" content="安装"><meta data-rh="true" property="og:description" content="安装"><link data-rh="true" rel="icon" href="/img/logo.svg"><link data-rh="true" rel="canonical" href="https://carrgan.github.io/notes/database/NoSQL/MongoDB"><link data-rh="true" rel="alternate" href="https://carrgan.github.io/notes/database/NoSQL/MongoDB" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://carrgan.github.io/notes/database/NoSQL/MongoDB" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Carrgan universe RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Carrgan universe Atom Feed">
+
+
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/life/rss.xml" title="Carrgan universe RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/life/atom.xml" title="Carrgan universe Atom Feed">
+<link rel="alternate" type="application/rss+xml" href="/tech-blog/rss.xml" title="Carrgan universe RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/tech-blog/atom.xml" title="Carrgan universe Atom Feed">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.7cb46ea9.css">
+<script src="/assets/js/runtime~main.32b8ab0c.js" defer="defer"></script>
+<script src="/assets/js/main.2a90c6dc.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="主导航" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Carrgan Universe</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/notes/">Notes</a><a class="navbar__item navbar__link" href="/tech-blog">Tech Blog</a><a class="navbar__item navbar__link" href="/life">Life</a><a class="navbar__item navbar__link" href="/blog">Blog</a><div class="navbar__item dropdown dropdown--hoverable"><a aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link" href="/notes/database/NoSQL/MongoDB">Tools</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/tools/password-generator">Random password</a></li><li><a class="dropdown__link" href="/tools/text-file-split">Text file split</a></li></ul></div></div><div class="navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link" href="/notes/database/NoSQL/MongoDB"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>简体中文</a><ul class="dropdown__menu"><li><a href="/notes/database/NoSQL/MongoDB" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="zh-Hans">简体中文</a></li></ul></div><a href="https://github.com/Carrgan" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/">v3.0.0(2024.8)</a><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Sidebar navigation" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/notes/">简介</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/Network/SSL-TSL">Network</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/Python/base">Python</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/Linux/Selinux">Linux</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/linear-algebra/what">线性代数</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/DotNet/ServiceLifeCycle">DotNet</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/FrontEnd/micro-front-end">FrontEnd</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/Java/Basic/configration-annotation">Java</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/LogicPro/midi">LogicPro</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/Sites/image-hosting-site">Sites</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/notes/WebRTC/">WebRTC</a><button aria-label="展开侧边栏分类 &#x27;WebRTC&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/notes/database/NoSQL/MongoDB">Database</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/notes/database/NoSQL/MongoDB">NoSQL</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/notes/database/NoSQL/MongoDB">MongoDB</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/notes/database/NoSQL/redis">Redis</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/notes/database/SQL/SQL Classification">SQL</a></div></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/notes/git-command">git命令速查</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/notes/nextjs/">Next Js</a><button aria-label="展开侧边栏分类 &#x27;Next Js&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Database</span><meta itemprop="position" content="1"></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">NoSQL</span><meta itemprop="position" content="2"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">MongoDB</span><meta itemprop="position" content="3"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>MongoDB</h1></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="安装">安装<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#安装">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="macos">MacOS<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#macos">​</a></h3>
+<ul>
+<li>
+<p>brew本来不能安装</p>
+</li>
+<li>
+<p>这是用于官方MongoDB软件的自定义HomebrewTap</p>
+</li>
+<li>
+<p>使用以下命令在MacOS终端会话中添加自定义Tap:</p>
+<p><code>brew tap mongodb/brew</code></p>
+</li>
+<li>
+<p>可正常安装</p>
+<p><code>brew install mongodb-community@4.2</code></p>
+</li>
+</ul>
+<p>如果安装了旧版本报错</p>
+<p>删除后重新安装</p>
+<p><code>brew untap mongodb/brew &amp;&amp; brew tap mongodb/brew</code>
+<code>brew install mongodb-community@4.2</code></p>
+<p>除了二进制文件之外，安装还创建了：</p>
+<ul>
+<li>the configuration file (/usr/local/etc/mongod.conf)</li>
+<li>the log directory path (/usr/local/var/log/mongodb)</li>
+<li>the data directory path (/usr/local/var/mongodb)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="运行mongodb社区版">运行MongoDB社区版<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#运行mongodb社区版">​</a></h2>
+<ul>
+<li>
+<p>要将MongoDB（即mongod进程）作为macOS服务运行，请发出以下命令</p>
+<p><code>brew services start mongodb-community@4.2</code></p>
+</li>
+<li>
+<p>要将MongoDB 作为后台进程手动运行，请发出以下命令：</p>
+<p><code>mongod --config /usr/local/etc/mongod.conf --fork</code></p>
+</li>
+</ul>
+<p>两种方法都使用/usr/local/etc/mongod.conf在安装过程中创建的文件。您也可以将自己的MongoDB 配置选项添加到此文件中。</p>
+<ul>
+<li>
+<p>要验证MongoDB是否正在运行，请mongod在正在运行的进程中进行搜索</p>
+<p><code>ps aux | grep -v grep | grep mongod</code></p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="维修">维修<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#维修">​</a></h2>
+<ul>
+<li>
+<p>删除下载的.tgz档案</p>
+<p><code>brew untap mongodb/brew &amp;&amp; brew tap mongodb/brew</code></p>
+</li>
+<li>
+<p>重试安装</p>
+<p><code>brew install mongodb-community@4.2</code></p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="mongodb使用">MongoDB使用<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#mongodb使用">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="基础命令">基础命令<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#基础命令">​</a></h3>
+<ul>
+<li>
+<p>查看当前的数据库：</p>
+<p><code>db</code></p>
+</li>
+<li>
+<p>查看所有的数据库：</p>
+<p><code>show dbs/show databases</code></p>
+</li>
+<li>
+<p>切換数据库：</p>
+<p><code>use db_name</code></p>
+</li>
+<li>
+<p>删除当前的数据库：</p>
+<p><code>db.dropDatabase()</code></p>
+</li>
+<li>
+<p>不用手动创建数据库
+-直接添加就会生成数据库了</p>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="关于集合">关于集合<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#关于集合">  ​</a></h3>
+<p>集合就是mysql的表了</p>
+<ul>
+<li>
+<p>不手动创建集合</p>
+<p>向不存在的集合中第一次加入数据时，集合会被创建出来</p>
+</li>
+<li>
+<p>手动创建结合</p>
+<p><code>db.createCollection(name, options)</code></p>
+<p><code>db.createCollection (&quot;stu&quot;)</code></p>
+<p><code>db.createCollection (&quot;sub&quot;, {capped: true, size: 10})</code></p>
+<ul>
+<li>参数 capped：认值为 false 表示不设置上限，值为 true 表示设置上限</li>
+<li>参数 size：当 capped 值为 true 时，需要指定此参数，表示上限大小，当文档达到上限时，会将之前的数据覆盖，单位为字节</li>
+</ul>
+</li>
+<li>
+<p>查看集合：</p>
+<p><code>show collections</code></p>
+</li>
+<li>
+<p>删除集合：</p>
+<p><code>db.集合名称.drop ()</code></p>
+</li>
+<li>
+<p>更改集合名称</p>
+<p><code>adminCommand({renameColleciton: &quot;db.col1&quot;, to: &quot;db.col2&quot;})</code></p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="数据类型">数据类型<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#数据类型">​</a></h2>
+<p>Object ID：文档 ID （文档将要存入数据库的一个个的字典）
+String：字符串，最常用，必须是有效的 UTF-8
+Boolean：存储一个布尔值，true 或 false 必须小写
+Integer：整数可以是 32 位或 64 位，这取決于服务器
+Double：存储浮点值
+Arrays：数组或列表，多个值存储到一个键
+Object：用于嵌入式的文档，即一个值为一个文档可以储存另一个集合
+Nul：存储 Nu 山值
+Timestamp：时间戳，表示从 1970-1-1 到现在的总秒数
+Date：存储当前日期或时间的 UNX 时间格式</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="注意点">注意点<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#注意点">​</a></h2>
+<ul>
+<li>创建日期语句如下：参数的格式为 YYYY-MM-DD new Date (2017-12-20)</li>
+<li>每个文档都有一个属性，为_id，保证每个文档的唯一性</li>
+<li>可以自己去设置 id 插入文档，如果没有提供，那么 Mongodb 为每个文档提供了一个独特的_id，类型为 objectId</li>
+<li>objectId 是一个 12 字节的十六进制数：<!-- -->
+<ul>
+<li>前 4 个字节为当前 时间戳</li>
+<li>接下来 3 个字节的 机器 ID</li>
+<li>接下来的 2 个字节中 Mongodbe 的服务进程 id</li>
+<li>最后 3 个字节是 简单的增量值</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="插入保存">插入&amp;保存<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#插入保存">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="插入">插入<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#插入">​</a></h3>
+<p><code>db.集合名称.insert(document)</code></p>
+<p><code>db.stu.insert({name: &#x27;gi&#x27;,gender: 1})</code></p>
+<p><code>db.stu.insert({\_id: &quot;20170101, name: &#x27;gi&#x27;, gender: 1)</code></p>
+<p>插入文档时，如果不指定_id 参数，Mongodb 会为文档分配一个唯一的 ObjectId</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="保存">保存<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#保存">​</a></h3>
+<p><code>db.集合名称.save(document)</code></p>
+<p>如果文档的 <code>_id</code> 已经存在则修改，如果文档的 <code>_id</code> 不存在则添加 Mongodb 插入数据</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="对比">对比<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#对比">​</a></h2>
+<ul>
+<li><code>db.collecion.insert({})</code> 插入数据，<code>_id</code> 存在就报错</li>
+<li><code>db.collection.save({})</code>   插入数据，<code>_id</code></li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="查询">查询<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#查询">​</a></h2>
+<p><code>db.集合名称.find({条件文档})</code></p>
+<p><code>db.集合名称.findOne({条件文档})</code> 查一条</p>
+<p><code>db.集合名称.find({条件文档}).prett()</code> 格式化结果</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="更新">更新<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#更新">​</a></h2>
+<p><strong>不加<code>$set:</code>会变为替换整个</strong></p>
+<p><code>db.集合名称.update({&lt;query&gt;, &lt;update&gt;, multi:&lt;boolean&gt;})</code></p>
+<p>query：查询条件参数
+update：更新操作符
+multi：可选，默认是 false，表示只更新找到的第一条记录，值为 true 表示把满足条件的文档全部更新</p>
+<p><code>db.test1000.update({name: &quot;xiaowang&quot;)}, {name: &quot;xiaozhao&quot;})</code></p>
+<p>name 为 xiaowan 的数据替换为 <code>{name: &quot;xiaozhao&quot;}</code></p>
+<p><code>db.test1000.update({name: &quot;xiaowang&quot;}, {$set:{name: &quot;xiaozhao&quot;}})</code></p>
+<p>把 name 为 xiaowang 的数据 name 的值更新为 xiaozhang</p>
+<p><code>db.test1000.update({name: &quot;xiaowang&quot;}, {$set:{name: &quot;xiaozhao&quot;}} ,{multi: true})</code></p>
+<p><code>{multi: true}</code> 达到更新多条的目的</p>
+<p>注意：&quot;multi update only works with $ operators&quot;</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="删除">删除<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#删除">​</a></h2>
+<p><code>db.集合名称.remove(&lt;query&gt;,{justOne: &lt;boolean&gt;})</code></p>
+<p>参数 query：可选，删除的文档的条件</p>
+<p>参数 justOne： 可选，如果设为 true 或 1, 则只删除一条，默认 false，表示删除多条</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="比较运算符">比较运算符<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#比较运算符">​</a></h2>
+<ul>
+<li>等于：默认是等于判断，没有运算符</li>
+<li>小于：<code>$lt</code> (less than)</li>
+<li>小于等于：<code>$ltb</code> (less than equa）</li>
+<li>大于：<code>$gt</code> (greater than)</li>
+<li>大于等于：<code>$gte</code></li>
+<li>不等于：<code>$ne</code></li>
+</ul>
+<p><code>db.stu.find({age: {$gte: 18}})</code></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="范围运算符">范围运算符<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#范围运算符">​</a></h2>
+<p>使用<code>$in</code>, <code>$nin</code>判断是否在某个范围内查询</p>
+<p>查询年龄为 18、28、38 的学生</p>
+<p><code>db.stu.find({age: {$in:[18, 28, 38]}})</code></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="逻辑运算符">逻辑运算符<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#逻辑运算符">​</a></h2>
+<p>And：在 json 中写多个条件即可
+查询年龄大于或等于 18, 并且性别为 true 的学生</p>
+<p><code>db.stu.find({age: {$gte: 18}}, {gender: true})</code></p>
+<p>Or: 使用<code>$or</code>，值为数组，数组中每个元素为 json
+查询年龄大于 18, 或性别为 false 的学生</p>
+<p><code>db.stu.find({$or: [age: {$gte: 18}, {gender: flase}]})</code></p>
+<p>查询年龄大于 18 或性别为男生，并且姓名是郭靖</p>
+<p><code>db.stu.find({$or:[{age: {$gte: 18}},{gender: true}],{name: &#x27;gj&#x27;}})</code></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="支持正则表达式">支持正则表达式<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#支持正则表达式">​</a></h2>
+<p>使用<code>//</code>或<code>$regex</code> 编写正则表达式</p>
+<p>abc开头，789结尾</p>
+<p><code>db.products.find({sku: /^abc/})</code></p>
+<p><code>db.products.find ({sku: {$regex: &#x27;789$&#x27;})</code></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="limit-和-skip">Limit 和 skip<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#limit-和-skip">​</a></h2>
+<ul>
+<li>
+<p>方法 limit (）：</p>
+<p>用于读取指定数量的文档</p>
+<p><code>db.集合名称.find().limit(NUMBER）</code></p>
+<p>查询 2 条学生信息</p>
+<p><code>db.stu.find().limit(2)</code></p>
+</li>
+<li>
+<p>方法 skip (）：</p>
+<p>用于跳过指定数量的文档</p>
+<p><code>db.集合名称.find.skip(NUMBER)</code></p>
+<p><code>db.stu.find().skip(2)</code></p>
+</li>
+<li>
+<p>同时使用</p>
+<p><code>db.集合名称.find.limit(NUMBER).skip(NUMBER)</code></p>
+<p><code>db.集合名称.find.skip(NUMBER).limit(NUMBER)</code> 推荐</p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="自定义查询">自定义查询*<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#自定义查询">​</a></h2>
+<p>使用<code>$ where</code> 后面写一个函数，返回满足条件的数据</p>
+<p>查询年龄大于 30 的学生</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#d6deeb;--prism-background-color:#011627"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#d6deeb;background-color:#011627"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#d6deeb"><span class="token plain">db.stu.find ({</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">   $where: function(){</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">        return this age &gt; 30;</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">        }</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">        })</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="偷走" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="投影">投影<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#投影">​</a></h2>
+<p>在查询到的返回结果中，只选择必要的字段</p>
+<p><code>db.集合名称.find({}, {字段名称：1, ...]}</code></p>
+<p>参数为字段与值，值为 1 表示显示，值为 0 不显</p>
+<p>特殊：对于_id 列默认是显示的，如果不显示需要明确设置为 0</p>
+<p><code>db.stu.find({},{_id: 0, name: 1, gender: 1})</code></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="排序">排序<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#排序">​</a></h2>
+<p>方法 sort (），用于对集进行排序</p>
+<p><code>db.集合名称.find().sort({字段：1})</code></p>
+<p>参数 1 为升序排列</p>
+<p>参数-1 为降序排列</p>
+<p>根据性别降序，再根据年龄升序</p>
+<p><code>db.stu.find().sort({gender: -1, age: 1})</code></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="统  计个数">统计个数<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#统计个数">​</a></h2>
+<p>方法 count（）用于统计结果集中文档条数</p>
+<p><code>db.集合名称.find.({条件}).count()</code></p>
+<p><code>db.集合名称.count({条件})</code></p>
+<p><code>db.stu.find.({gender: true}).count()</code></p>
+<p><code>db.stu.count({age: {$gt: 20}, gender: true})</code></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="数据的备份和恢复">数据的备份和恢复<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#数据的备份和恢复">​</a></h2>
+<p>备份的语法:</p>
+<p><code>mongodump -h dbhost -d dbname -o dbdirectory</code></p>
+<p>-h: 服务器地址，也可以指定端口号
+-d: 需要备份的数据库名称
+-o: 备份的数据存放位置，此目录中存放着备份出来的数据</p>
+<p>在本地只用<code>-o</code>就行了</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="数据的恢复">数据的恢复<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#数据的恢复">​</a></h2>
+<p>恢复语法：</p>
+<p><code>mongorestore -h dbhost -d dbname --dir dbdirectory</code></p>
+<p>-h: 服务器地址
+-d: 需要恢复的数据库实例
+--dir: 备份数据所在位置</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="聚合-aggregate">聚合 aggregate<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#聚合-aggregate">​</a></h2>
+<p>聚合（aggregate）是基于数据处理的聚合管道，每个文档通过一个由多个阶段(stage）组成的管道，可以对每个阶段的管道进行分组、过滤等功能，然后经过一系列的处理，输出相应的结果。</p>
+<p><code>db.集合名称.aggregate({管道：{表达式}})</code></p>
+<p>第一阶个<code>{}</code>里的内容通过管道传给第二个<code>{}</code>使用</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="常用管道">常用管道<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#常用管道">​</a></h2>
+<p>在 mongodbe 中，文档处理完毕后，通过管道进行下一次处理常用管道如下：</p>
+<ul>
+<li><code>$group</code>：将集合中的文档分组，可用于统计结果</li>
+<li><code>$match</code>：过滤数据，只输出符合条件的文档</li>
+<li><code>$project</code>：修改输入文档的结构，如重命名、增加、删除字段、创建计算结果</li>
+<li><code>$sort</code>：将输入文档排序后输出<code>{$sort:{age:1}}</code></li>
+<li><code>$limit</code>：限制聚合管道返回的文档数</li>
+<li><code>$skip</code>：跳过指定数量的文档，并返回余下的文档</li>
+<li><code>$unwind</code>：将数组类型的字段进行拆分<!-- -->
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#d6deeb;--prism-background-color:#011627"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#d6deeb;background-color:#011627"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#d6deeb"><span class="token plain">db.t2.insert({_id:1, item:&#x27;t-shirt&#x27;, size: [&#x27;S&#x27;, &#x27;M&#x27;, &#x27;L&#x27;]})</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">db.t2.insert({_id:2, item:&#x27;t-shirt&#x27;})</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">db.t2.aggregate(</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">  {</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">    $unwind: &#x27;$size&#x27;,</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">    PreserveNullandEmptyArrays: true #防止数据丢失即使有空也会保留</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">  }</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">)</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">#结果</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">{_id:1, item:&#x27;t-shirt&#x27;, size: &#x27;S&#x27;}</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">{_id:1, item:&#x27;t-shirt&#x27;, size: &#x27;M&#x27;}</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">{_id:1, item:&#x27;t-shirt&#x27;, size: &#x27;L&#x27;}</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">{_id:2, item:&#x27;t-shirt&#x27;}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="偷走" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="表达式">表达式<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#表达式">​</a></h2>
+<p>处理输入文档并输出</p>
+<p>语法：<code>表达式：&#x27;$列名常用表达式&#x27;</code></p>
+<ul>
+<li><code>$sum</code>：计算总和，<code>$sum:1</code>表示以一倍计数</li>
+<li><code>$avg</code>：计算平均值</li>
+<li><code>$min</code>：获取最小值</li>
+<li><code>$max</code>：获取最大值</li>
+<li><code>$push</code>：在结果文档中插入值到一个数组中</li>
+<li><code>$first</code>：根据资源文档的排序获取第一个文档数据</li>
+<li><code>$last</code>：根据资源文档的排序获取最后一个文档数据</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="group的注意事项"><code>$group</code>的注意事项<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#group的注意事项">​</a></h2>
+<ul>
+<li><code>$group</code>对应的字典有几个键，结果中就有几个键</li>
+<li>每个分组都要有一个独特的分子依据<code>_id</code></li>
+<li>取不同字段的值需要使用<code>$</code>，<code>{name: $name}</code></li>
+<li>取字典嵌套字典中的值时(取上层字典中的值)<code>$_id.name</code></li>
+<li>能够同时按照多个键进行分组，对全部键进行分组可以去重
+<code>{$group: {_id: {name: &#x27;$name&#x27;}, {age: &#x27;$age&#x27;}}}</code>
+<ul>
+<li>结果:<code>{_id: {name: &#x27;&#x27;, age: &#x27;&#x27;}}</code></li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="聚合实例">聚合实例<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/database/NoSQL/MongoDB#聚合实例">​</a></h2>
+<div class="language-MongoDB language-mongodb codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#d6deeb;--prism-background-color:#011627"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-mongodb codeBlock_bY9V thin-scrollbar" style="color:#d6deeb;background-color:#011627"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#d6deeb"><span class="token plain"># 按照gender进行分组，获取不同组数据的个数和平均值</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">db.stu.aggregate(</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">  {$group: {_id: &#x27;$gender&#x27;, count: {$sum: 1}, avg_age:{$avg: &#x27;$age&#x27;}}},</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">  {$project:{gender:&#x27;$_id&#x27;, count:1, avg_age: 1}} # 格式化输出</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">  )</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain"># 按照hometown进行分组，获取不同组的平均年龄</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">db.stu.aggregate(</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">  {$group: {_id:&#x27;$hometown&#x27;, avg_age: {$avg: &#x27;$age&#x27;}}}</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">  )</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain"># 使用$group统计整个文档,并计算平均年龄</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">db.stu.aggregate(</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">  {$group: {_id:null, count: {$sum:1}, avg_age: {$avg: &#x27;$age&#x27;}}}</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">  )</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain"># 选择年龄大于20的或家乡在蒙古或大理的学生的男女数量</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">db.stu.aggregate{</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">  {$match: {$or: [{age: {$gt: 20}}, hometown: {$in: [&#x27;蒙古&#x27;,&#x27;大理&#x27;]}]}  # 相当于find()</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">  {$group: {_id: &#x27;$gender&#x27;, count: {$sum:1}}}</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">  {$project: {gender: &#x27;$_id.gender&#x27;, count:1, _id:0}}</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">}</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain"># 一下集合有country, province ,userid三个件</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">db.test.aggregate{</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">  {$group:{_id:{country: &#x27;$country&#x27;, province: &#x27;$province&#x27;, userid:&#x27;$userid&#x27;}}}</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">  {$group:{_id:{country: &#x27;$_id.country&#x27;, province:&#x27;$_id.province&#x27;},count:{$sum:1}}} # 以country和province进行分组</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">  {$project:{_id:0, count:1, country:1, province: 1}}</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">}</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain"># unwind求alex下tag中的数据个数</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">{username: &#x27;alex&#x27;, tag: [&#x27;C#&#x27;, &#x27;Java&#x27;, &#x27;Python&#x27; ]}</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">db.test.aggregate(</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">  {$match:{username: &#x27;alex&#x27;}},</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">  {$unwind: &#x27;$tag&#x27;},</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">  {$group: {_id: null, sum: {$sum:1}}}</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">  )</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain" style="display:inline-block"></span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="偷走" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages navigation"><a class="pagination-nav__link pagination-nav__link--prev" href="/notes/WebRTC/implement"><div class="pagination-nav__sublabel">看看前面的</div><div class="pagination-nav__label">实现一个WEB RTC应用</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/notes/database/NoSQL/redis"><div class="pagination-nav__sublabel">接着看</div><div class="pagination-nav__label">Redis</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#安装">安装</a><ul><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#macos">MacOS</a></li></ul></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#运行mongodb社区版">运行MongoDB社区版</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#维修">维修</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#mongodb使用">MongoDB使用</a><ul><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#基础命令">基础命令</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#关于集合">关于集合</a></li></ul></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#数据类型">数据类型</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#注意点">注意点</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#插入保存">插入&amp;保存</a><ul><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#插入">插入</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#保存">保存</a></li></ul></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#对比">对比</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#查询">查询</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#更新">更新</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#删除">删除</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#比较运算符">比较运算符</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#范围运算符">范围运算符</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#逻辑运算符">逻辑运算符</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#支持正则表达式">支持正则表达式</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#limit-和-skip">Limit 和 skip</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#自定义查询">自定义查询*</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#投影">投影</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#排序">排序</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#统计个数">统计个数</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#数据的备份和恢复">数据的备份和恢复</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#数据的恢复">数据的恢复</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#聚合-aggregate">聚合 aggregate</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#常用管道">常用管道</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#表达式">表达式</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#group的注意事项"><code>$group</code>的注意事项</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/database/NoSQL/MongoDB#聚合实例">聚合实例</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Notes</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/Notes/">Notes</a></li><li class="footer__item"><a class="footer__link-item" href="/notes/Network/SSL-TSL">SSL/TSL</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://weibo.com/u/3602696930?nick=Carrgan" target="_blank" rel="noopener noreferrer" class="footer__link-item">Weibo<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://music.163.com/#/artist?id=12236222" target="_blank" rel="noopener noreferrer" class="footer__link-item">NetEase Music<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://space.bilibili.com/72913460" target="_blank" rel="noopener noreferrer" class="footer__link-item">Bilibili<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">Useful site</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://roadmap.sh" target="_blank" rel="noopener noreferrer" class="footer__link-item">Tech roadmap<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Tech Blog</a></li><li class="footer__item"><a class="footer__link-item" href="/life">Life</a></li><li class="footer__item"><a href="https://github.com/Carrgan" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://blog.csdn.net/Carrgan" target="_blank" rel="noopener noreferrer" class="footer__link-item">CSDN<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Docusaurus<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://react-spring.dev/" target="_blank" rel="noopener noreferrer" class="footer__link-item">React-Spring<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="margin-bottom--sm"><img src="/img/logo-with-text.svg" alt="Carrgan Universe Logo" class="footer__logo themedComponent_mlkZ themedComponent--light_NVdE" width="160" height="51"><img src="/img/logo-with-text.svg" alt="Carrgan Universe Logo" class="footer__logo themedComponent_mlkZ themedComponent--dark_xIcU" width="160" height="51"></div><div class="footer__copyright">Copyright © 2024 Carrgan. All Rights Reserved</div></div></div></footer></div>
+</body>
+</html>

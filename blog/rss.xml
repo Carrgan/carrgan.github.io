@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Carrgan universe Blog</title>
+        <link>https://carrgan.github.io/blog</link>
+        <description>Carrgan universe Blog</description>
+        <lastBuildDate>Thu, 08 Aug 2024 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>zh-Hans</language>
+        <item>
+            <title><![CDATA[V2.2 Post]]></title>
+            <link>https://carrgan.github.io/blog/v2.2-post</link>
+            <guid>https://carrgan.github.io/blog/v2.2-post</guid>
+            <pubDate>Thu, 08 Aug 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[距离v2.1(2023-7) 发布又过了一年多了，更新了Docusaurus, 并且升级到了React18。]]></description>
+            <content:encoded><![CDATA[<p>距离v2.1(2023-7) 发布又过了一年多了，更新了Docusaurus, 并且升级到了React18。</p>
+<p>发现之前的 ReactAnime 已经不维护了，换了比较主流的 <strong>react-sprint</strong> 来做动画。<strong>react-sprint</strong> 的hook很好用，性能方面感觉也比之前的
+react-anime强不少，期待作出更好的页面来。</p>]]></content:encoded>
+            <category>New Version</category>
+        </item>
+        <item>
+            <title><![CDATA[V2.1 Post]]></title>
+            <link>https://carrgan.github.io/blog/v2.1-post</link>
+            <guid>https://carrgan.github.io/blog/v2.1-post</guid>
+            <pubDate>Sun, 02 Jul 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[距离v2.0(2022-4) 发布又过了一年多了，最近工作一直被鞭打，没时间做blog，都快忘记Blog的代码结构了。]]></description>
+            <content:encoded><![CDATA[<p>距离v2.0(2022-4) 发布又过了一年多了，最近工作一直被鞭打，没时间做blog，都快忘记Blog的代码结构了。</p>
+<p>接上一篇，星星点击事件没来来得及做，先做了一个工具模块，打算打造一些好用的小工具。</p>
+<p>第一个工具，实现了一个<a href="https://carrgan.github.io/tools/password-generator">自动生成密码</a>的工具，可以通过配置生成随即密码。
+在工作中会遇到一些需要密码过期需要重新设置密码的场景，使用网络的工具不是很放心，写了第一个python版本的，但是每次使用都必须手动运行python脚本。如果没有安装python就很不方便，所以就有了这个模块。</p>
+<p>接下来打算完善别的工具，目前有以下打算</p>
+<ul>
+<li>Excel to json(支持配置Json数据类型)</li>
+<li>一个连续decode的工具，例如Base 64 decode之后又支持url decode 的工具</li>
+<li>通过JSON来生成typescript接口的工具</li>
+</ul>]]></content:encoded>
+            <category>New Version</category>
+        </item>
+        <item>
+            <title><![CDATA[V2 Post]]></title>
+            <link>https://carrgan.github.io/blog/v2-post</link>
+            <guid>https://carrgan.github.io/blog/v2-post</guid>
+            <pubDate>Sun, 20 Mar 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[距离 carrgan.io V1（2021-4) 已经过去快一年了，一年之前刚刚从学校出来，还没有参加工作，利用闲暇时光发布了V1。]]></description>
+            <content:encoded><![CDATA[<p>距离 carrgan.io V1（2021-4) 已经过去快一年了，一年之前刚刚从学校出来，还没有参加工作，利用闲暇时光发布了V1。</p>
+<p><img decoding="async" loading="lazy" alt="v1" src="https://carrgan.github.io/assets/images/v1-2704429d50e30bafbcba7fd1e3d651e8.png" width="1196" height="762" class="img_ev3q"></p>
+<p>V1用<a href="https://docs.pmnd.rs/" target="_blank" rel="noopener noreferrer">Pmndrs</a>为React封装的<a href="https://threejs.org/" target="_blank" rel="noopener noreferrer">Three.js</a>
+加载了一个在开源社区<a href="https://sketchfab.com/feed" target="_blank" rel="noopener noreferrer">Sketchfab</a>找的，免费使用的3D模型。</p>
+<p>由于网站托管在github，有一些网络和性能原因，还有这个模型不是我自己建的，感觉有很多限制，我想实现的很多细节功能（点击一个3D物体，触发指定的事件）不能被实现，所以放弃了这一版。</p>
+<p>本来想要自己用<a href="https://www.blender.org/" target="_blank" rel="noopener noreferrer">Blender</a>自己建一个3D模型，可是这个软件实在是过于复杂，不值得为了这个投入大量时间去学习。</p>
+<p>最后使用<a href="https://www.sketch.com/" target="_blank" rel="noopener noreferrer">Sketch</a>画了一颗星球来作为Logo和主页。</p>
+<p>在开发V2的时候遇到了一些问题，一开始写好之后发现Safari的图形处理性能很低，由于SVG加了一些阴影和光影效果导致了渲染的卡顿，迫不得之下只能让Safari不渲染阴影和光影。</p>
+<p>之后使用<code>@keyframe</code>写了动画放在全局的CSS文件中，结果Docusaurus打包的时候不能正确的将<code>@keyframe</code>
+写入打包好的CSS文件，由于Docusaurus使用了<a href="https://www.docusaurus.io/zh-CN/docs/advanced/ssg" target="_blank" rel="noopener noreferrer">SSG</a>
+渲染，想要手动的把CSS导入很麻烦，只能打包好再手动写入<code>index.html</code>。</p>
+<p>最后决定选用JS动画库，在比较了多款JS库之后，选择了<a href="https://animejs.com/" target="_blank" rel="noopener noreferrer">AnimeJS</a>
+非常强大的JS库，同样使用了React的封装版<a href="https://github.com/plus1tv/react-anime/blob/HEAD/documentation.md" target="_blank" rel="noopener noreferrer">react-anime</a>.</p>
+<p><strong>在V2.1版本中打算处理星星和星球的点击事件</strong></p>]]></content:encoded>
+            <category>New Version</category>
+        </item>
+    </channel>
+</rss>

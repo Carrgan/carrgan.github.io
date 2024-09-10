@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-notes docs-version-current docs-doc-page docs-doc-id-Linux/Selinux" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.4.0">
+<title data-rh="true">Selinux | Carrgan universe</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://carrgan.github.io/notes/Linux/Selinux"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-notes-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-notes-current"><meta data-rh="true" property="og:title" content="Selinux | Carrgan universe"><meta data-rh="true" name="description" content="进程和程序"><meta data-rh="true" property="og:description" content="进程和程序"><link data-rh="true" rel="icon" href="/img/logo.svg"><link data-rh="true" rel="canonical" href="https://carrgan.github.io/notes/Linux/Selinux"><link data-rh="true" rel="alternate" href="https://carrgan.github.io/notes/Linux/Selinux" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://carrgan.github.io/notes/Linux/Selinux" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Carrgan universe RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Carrgan universe Atom Feed">
+
+
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/life/rss.xml" title="Carrgan universe RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/life/atom.xml" title="Carrgan universe Atom Feed">
+<link rel="alternate" type="application/rss+xml" href="/tech-blog/rss.xml" title="Carrgan universe RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/tech-blog/atom.xml" title="Carrgan universe Atom Feed">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.7cb46ea9.css">
+<script src="/assets/js/runtime~main.32b8ab0c.js" defer="defer"></script>
+<script src="/assets/js/main.2a90c6dc.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="主导航" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Carrgan Universe</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/notes/">Notes</a><a class="navbar__item navbar__link" href="/tech-blog">Tech Blog</a><a class="navbar__item navbar__link" href="/life">Life</a><a class="navbar__item navbar__link" href="/blog">Blog</a><div class="navbar__item dropdown dropdown--hoverable"><a aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link" href="/notes/Linux/Selinux">Tools</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/tools/password-generator">Random password</a></li><li><a class="dropdown__link" href="/tools/text-file-split">Text file split</a></li></ul></div></div><div class="navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link" href="/notes/Linux/Selinux"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>简体中文</a><ul class="dropdown__menu"><li><a href="/notes/Linux/Selinux" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="zh-Hans">简体中文</a></li></ul></div><a href="https://github.com/Carrgan" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/">v3.0.0(2024.8)</a><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Sidebar navigation" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/notes/">简介</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/Network/SSL-TSL">Network</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/Python/base">Python</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/notes/Linux/Selinux">Linux</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/notes/Linux/Selinux">Selinux</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/notes/Linux/Crontab">Crontab</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/notes/Linux/SSH">SSH</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/notes/Linux/system-server">认识系统服务</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/linear-algebra/what">线性代数</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/DotNet/ServiceLifeCycle">DotNet</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/FrontEnd/micro-front-end">FrontEnd</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/Java/Basic/configration-annotation">Java</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/LogicPro/midi">LogicPro</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/Sites/image-hosting-site">Sites</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/notes/WebRTC/">WebRTC</a><button aria-label="展开侧边栏分类 &#x27;WebRTC&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/notes/database/NoSQL/MongoDB">Database</a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/notes/git-command">git命令速查</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/notes/nextjs/">Next Js</a><button aria-label="展开侧边栏分类 &#x27;Next Js&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Linux</span><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Selinux</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>Selinux</h1></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="进程和程序">进程和程序<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/Linux/Selinux#进程和程序">​</a></h2>
+<blockquote>
+<p>程序 (program):通常为 binary program ，放置在储存媒体中 (如硬盘、光盘、软盘、磁带等)， 为实体文 件的型态存在;
+进程 (process):程序被触发后，执行者的权限与属性、程序的程序代码与所需数据等都会被加载内存中，操 作系统并给予这个内存内的单元一个标识符 (PID)，可以说，进程就是一个正在运作中的程序。</p>
+</blockquote>
+<p>常驻内存的进程就是服务=&gt;一般在末尾加d e.g hpptd
+进程给予执行者权限/属性/所需脚本与数据或文件，最后给予一个PID
+bash有一个PID衍生出的其他进程沿用相关权限
+父进程PID对应子进程PPID号
+杀死子进程父进程又会再生故先杀死父进程</p>
+<p>Linux是多用户系统一个用户Down了可以再登陆另一个用户杀死这个用户的进程</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="工作管理">工作管理<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/Linux/Selinux#工作管理">​</a></h2>
+<p><strong>终端分为前景和背景</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#d6deeb;--prism-background-color:#011627"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#d6deeb;background-color:#011627"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#d6deeb"><span class="token plain">&amp;           #命令扔到背景去执行</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">[ctrl]+z    #命令扔到背景暂停</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">jobs        #观察背景 -l 观察pid -r 正在运行 -s 暂停+预设的取出进程</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">fg          #取出背景工作 fg 2 取出第二个</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">bg %3       #背景中第三个运作</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">stop %num   #背景中暂停 红帽是 kill -stop PID</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">kill        # -l 列出指令 -1 重读配置文件 -2 强制终止 -9 立刻删除工作 -15 正常终止 eg.kill -9 %2 killall 直接接名称</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">pstree     #查看进程树 -u 后面会有所有者</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="偷走" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<blockquote>
+<p>nohup 任务导向～/nohup.out 终端关闭不影响 不支持内建指令</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="进程管理">进程管理<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/Linux/Selinux#进程管理">​</a></h2>
+<p><strong>进程的观察</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#d6deeb;--prism-background-color:#011627"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#d6deeb;background-color:#011627"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#d6deeb"><span class="token plain">ps axjf      #部分进程树状态 -o 指定部分查看 pid comm等</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="偷走" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#d6deeb;--prism-background-color:#011627"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#d6deeb;background-color:#011627"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#d6deeb"><span class="token plain">ps -l       #观察自己</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="偷走" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<blockquote>
+<p>F 进程旗标（4<!-- -->:root<!-- --> 1子进程）<br>
+<!-- -->S 运行状态
+C cpu
+PRI/NT CPU优先级
+ADDR/SZ/WCHAN addr进程是内存的那一部分 - run/SZ用掉多少内存？WCHAN进程是否运行 - run
+TIME 用掉CPU时间</p>
+</blockquote>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#d6deeb;--prism-background-color:#011627"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#d6deeb;background-color:#011627"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#d6deeb"><span class="token plain">ps aux       #观察全部</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="偷走" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<blockquote>
+<p>USER:属于那个使用者账号
+PID :进程标识符
+%CPU:用掉的 CPU 资源百分比;
+%MEM:占用的物理内存百分比;
+VSZ :使用掉的虚拟内存量 (Kbytes)
+RSS :占用的固定的内存量 (Kbytes)
+TTY :在那个终端机上面运作，若与终端机无关则显示 ?，另外， tty1-tty6 是本机上面的登录者进程，若为 pts/0 等等的，则表示为由网络连接进主机的进程。
+STAT:该进程目前的状态，状态显示与 ps -l 的 S 旗标相同 (R/S/T/Z)
+START:被触发启动的时间;
+TIME :实际使用 CPU 运作的时间。
+COMMAND:该进程的实际指令</p>
+</blockquote>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#d6deeb;--prism-background-color:#011627"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#d6deeb;background-color:#011627"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#d6deeb"><span class="token plain">pidof ssh       #查看某个进程PID</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="偷走" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#d6deeb;--prism-background-color:#011627"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#d6deeb;background-color:#011627"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#d6deeb"><span class="token plain">top             #动态观察</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="偷走" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<blockquote>
+<p>d :后面可以接秒数，整个进程画面更新的秒数。预设是 5 秒;
+-b :以批次的方式执行 top，通常会搭配数据流重导向来将批次的结果输出成为文件。
+-n :与 -b 搭配，意义  是，需要进行几次 top 的输出结果。 -p :指定某些个 PID 来进行观察监测而已。</p>
+</blockquote>
+<blockquote>
+<p>在 top 执行过程当中可以使用的按键指令:
+? :显示在 top 当中可以输入的按键指令; P :以 CPU 的使用资源排序显示;
+M :以 Memory 的使用资源排序显示;
+N :以 PID 来排序喔!
+T :由该 Process 使用的 CPU 时间累积 (TIME+) 排序。 k :给予某个 PID 一个讯号 (signal)
+r :给予某个 PID 重新制订一个 nice 值。 q :离开 top 软件的按键。改变他的优先级别</p>
+</blockquote>
+<p><strong>TOP说明</strong></p>
+<blockquote>
+<p>PR <!-- -->:Priority<!-- --> 的简写，进程的优先执行顺序，越小越早被执行;
+NI <!-- -->:Nice<!-- --> 的简写，与 Priority 有关，也是越小越早被执行;
+%CPU<!-- -->:CPU<!-- --> 的使用率;
+%MEM:内存的使用率;
+TIME+<!-- -->:CPU<!-- --> 使用时间的累加;</p>
+</blockquote>
+<p><strong>优先级=Priority（内核决定）+nice</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#d6deeb;--prism-background-color:#011627"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#d6deeb;background-color:#011627"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#d6deeb"><span class="token plain">renice [nicenum] [PID]              #更改正在运行进程的优先级</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">nice -n 19 cat /dev/zero &gt; /dev/null #让运行时就以某个nice值运行</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="偷走" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p><strong>系统资源的观察</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#d6deeb;--prism-background-color:#011627"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#d6deeb;background-color:#011627"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#d6deeb"><span class="token plain">free        #查看内存使用情况 -m mb -g gb</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">uname       #查看系统与内核信息 </span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">uptime      #系统启动时间工作负荷</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">netstat     #追踪网路或插槽文件</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">netstat -tulnp  #查看已在监听的端口</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">vmstat 1 10 #检测系统资源变化 一秒一次进行十次</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">demesg      #分析核心产生的讯息</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="偷走" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p><strong>特殊文件与进程</strong>
+SUID</p>
+<blockquote>
+<p>SUID 权限仅对二进制程序(binary program)有效;
+执行者对于该程序需要具有 x 的可执行权限;
+本权限仅在执行该程序的过程中有效 (run-time);
+执行者将具有该程序拥有者 (owner) 的权限。
+<code>find / -perm /6000</code>查询所有具有s权限的可执行文件</p>
+</blockquote>
+<p><strong>/proc/* 代表的意义</strong></p>
+<blockquote>
+<p>内存当中的数据写到/proc/*目录下
+目前主机各进程的PID都以目录的形式存里面 eg<!-- -->:systemd<!-- --> pid is 1 that directory is /proc/1/*</p>
+</blockquote>
+<p><strong>查询文件开启文件</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#d6deeb;--prism-background-color:#011627"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#d6deeb;background-color:#011627"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#d6deeb"><span class="token plain">fuser [-umv] [-k [i] [-signal]] file/dir      #藉由文件(或文件系统)找出正在使用该文件的进程</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">u :除了进程的 PID 之外，同时列出该进程的拥有者;</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">-m :后面接的那个档名会主动的上提到该文件系统的最顶层，对 umount 不成功很有效! -v :可以列出每个文件与进程还有指令的完整相关性!</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">-k :找出使用该文件/目录的 PID ，并试图以 SIGKILL 这个讯号给予该 PID; -i :必须与 -k 配合，在删除 PID 之前会先询问使用者意愿!</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">-signal:例如 -1 -15 等等，若不加的话，预设是 SIGKILL (-9) </span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="偷走" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<blockquote>
+<p>ACCESS 的项目
+c :此进程在当前的目录下(非次目录);
+e :可被触发为执行状态;
+f :是一个被开启的文件;
+r :代表顶层目录 (root directory);
+F :该文件被开启了，不过在等待回应中;
+m :可能为分享的动态函式库;</p>
+</blockquote>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#d6deeb;--prism-background-color:#011627"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#d6deeb;background-color:#011627"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#d6deeb"><span class="token plain">lsof [-aUu] [+d]       #列出被进程所开启的文件档名</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">-a :多项数据需要『同时成立』才显示出结果时!</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">-U :仅列出 Unix like 系统的 socket 文件类型;</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">-u :后面接 username，列出该使用者相关进程所开启的文件; </span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">+d :后面接目录，亦即找出某个目录底下已经被开启的文件!</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="偷走" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#d6deeb;--prism-background-color:#011627"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#d6deeb;background-color:#011627"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#d6deeb"><span class="token plain">pidof [-sx] program_name        #找出某支正在执行的程序的 PID</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">-s :仅列出一个 PID 而不列出所有的 PID</span><br></span><span class="token-line" style="color:#d6deeb"><span class="token plain">-x :同时列出该 program name 可能的 PPID 那个进程的 PID</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="偷走" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="selinux">SELinux<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/notes/Linux/Selinux#selinux">​</a></h2>
+<p><strong>配置文件目录/etc/selinux/config</strong></p>
+<blockquote>
+<p>任何用户包括root用这个进程只能访问限制的资源
+SELinux 是透过 MAC 的方式来控管进程，他控制的主体是进程， 而目标则 是该进程能否读取的『文件资源』</p>
+</blockquote>
+<ul>
+<li>主体 (Subject):
+SELinux 主要想要管理的就是进程，因此你可以将『主体』跟 process 划上等号;</li>
+<li>目标 (Object):
+主体进程能否存取的『目标资源』一般就是文件系统。因此这个目标项目可以等文件系统划上等号;</li>
+<li>政策 (Policy):
+由于进程与文件数量庞大，因此 SELinux 会依据某些服务来制订基本的存取安全性政策。这些政策内还会 有详细的规则 (rule) 来指定不同的服务开放某些资源的存取与否。在目前的 CentOS 7.x 里面仅有提供三个 主要的政策，分别是:<!-- -->
+<ul>
+<li>targeted:针对网络服务限制较多，针对本机限制较少，是预设的政策;</li>
+<li>minimum:由 target 修订而来，仅针对选择的进程来保护!</li>
+<li>mls:完整的 SELinux 限制，限制方面较为严格。</li>
+</ul>
+</li>
+<li>安全性本文 (security context):
+主体与目标的安全性 本文必须一致才能够顺利存取,这个安全性本文 (security context) 有点类似文件系统的 rwx <img decoding="async" loading="lazy" src="evernotecid://3665AFF6-B454-4044-8816-042E9DACA93D/appyinxiangcom/21424495/ENResource/p2" alt="2df2a02371da6b98505573a2bf31b77c.png" class="img_ev3q"></li>
+</ul>
+<blockquote>
+<p>安全性文本放在inode里</p>
+</blockquote>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#d6deeb;--prism-background-color:#011627"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#d6deeb;background-color:#011627"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#d6deeb"><span class="token plain">ls -Z           #查询当前目录安全性文本</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="偷走" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<blockquote>
+<p>Identify:role<!-- -->:type<!-- -->
+身份识别:角色:类型</p>
+</blockquote>
+<ul>
+<li>Identify<!-- -->
+<ul>
+<li>unconfined_u:不受限的用户</li>
+<li>system_u:系统用户</li>
+</ul>
+</li>
+<li>Role<!-- -->
+<ul>
+<li>object_r:代表的是文件或目录等文件资源</li>
+<li>system_r:代表的就是进程啦</li>
+</ul>
+</li>
+<li>Type<!-- -->
+<ul>
+<li>type:在文件资源 (Object) 上面称为类型 (Type)</li>
+<li>domain:在主体进程 (Subject) 则称为领域 (domain)</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Type 很重要每次
+触发一个可执行文件，该文件造成的主题进程（Subject）具有crond这个领域（domain），政策（domain可读取的资料列在政策中）对这个领域制定了许多规则，crond domain被设定读取system_crond_spool_t这个类型的文件（Object），具体还看rwx
+简单来说配置文件的Type必须与SELinux允许的Type相同才能读到需要读的目录</p>
+</blockquote>
+<p><strong>SELinux的三种模式</strong></p>
+<ul>
+<li>enforcing:强制模式</li>
+<li>permissive:宽容模式,只会警告</li>
+<li>disabled:关闭</li>
+</ul>
+<blockquote>
+<p><code>getenforce</code>查看模式
+<code>sestatus</code>查看政策（Policy）-v:检查/etc/sestatus.conf内的文件与进程的安全性文本 -b：列出规则（rule）
+<code>setenforce [0|1] 0:permissive 1:Enforcing</code>
+<strong>改变模式要重启</strong></p>
+</blockquote>
+<p><strong>SELinux 的Rule</strong></p>
+<blockquote>
+<p><code>getsebool</code> [-a] [规则名称] -a列出目前上所有selinux规则的bool
+<code>seinfo [-Atrub]</code> 列出每个规则到底在限制什么</p>
+<ul>
+<li>-A :列出 SELinux 的状态、规则布尔值、身份识别、角色、类别等所有信息
+-u :列出 SELinux 的所有身份识别 (user) 种类
+-r :列出 SELinux 的所有角色 (role) 种类
+-t :列出 SELinux 的所有类别 (type) 种类
+-b :列出所有规则的种类 (布尔值)
+<code>sesearch [-A] [-s 主体类别] [-t 目标类别] [-b 布尔值]</code> -A 列出允许读取的相关信息
+<code>semanage boolean -l | grep httpd_enable_homedirs</code>看bool到底是做什么的</li>
+</ul>
+</blockquote>
+<p><strong>修改SELinux的bool</strong>
+<code>setsebool [-P] 『规则名称』 [0|1]</code> -P 写入配置文件</p>
+<p><strong>SELinux安全文本的修改</strong>
+<code>chcon [-R] [-t type] [-u user] [-r role] 文件</code>
+<code>chcon [-R] --reference=范例文件 文件</code></p>
+<ul>
+<li>-R :连同该目录下的次目录也同时修改;
+-t :后面接安全性本文的类型字段!例如 httpd_sys_content_t ;
+-u :后面接身份识别，例如 system_u; (不重要)
+-r :后面街角色，例如 system_r; (不重要)
+-v :若有变化成功，请将变动的结果列出来
+--reference=范例文件:拿某个文件当范例来修改后续接的文件的类型!</li>
+</ul>
+<p><strong>使用 restorecon 让文件恢复正确的 SELinux type</strong>
+<code>restorecon [-Rv] 文件或目录</code></p>
+<ul>
+<li>-R :连同次目录一起修改;
+-v :将过程显示到屏幕上</li>
+</ul>
+<p><strong>semanage 默认目录的安全性本文查询与修改</strong>
+文件放在目录里会有 目录的安全性文本属性
+<code>semanage {login|user|port|interface|fcontext|translation} -l</code>
+<code>semanage fcontext -{a|d|m} [-frst] file_spec</code></p>
+<ul>
+<li>fcontext :主要用在安全性本文方面的用途，
+-l 为查询的意思;
+-a :增加的意思，你可以增加一些目录的默认安全性本文类型设定;
+-m :修改的意思; -d :删除的意思。</li>
+</ul>
+<p><strong>用setroubleshoot auditd来排错</strong>
+SELinux 的错误讯息与克服方法记录到 /var/log/messages 与 /var/log/setroubleshoot/* 里</p></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages navigation"><a class="pagination-nav__link pagination-nav__link--prev" href="/notes/Python/other"><div class="pagination-nav__sublabel">看看前面的</div><div class="pagination-nav__label">其他</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/notes/Linux/Crontab"><div class="pagination-nav__sublabel">接着看</div><div class="pagination-nav__label">Crontab</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a class="table-of-contents__link toc-highlight" href="/notes/Linux/Selinux#进程和程序">进程和程序</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/Linux/Selinux#工作管理">工作管理</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/Linux/Selinux#进程管理">进程管理</a></li><li><a class="table-of-contents__link toc-highlight" href="/notes/Linux/Selinux#selinux">SELinux</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Notes</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/Notes/">Notes</a></li><li class="footer__item"><a class="footer__link-item" href="/notes/Network/SSL-TSL">SSL/TSL</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://weibo.com/u/3602696930?nick=Carrgan" target="_blank" rel="noopener noreferrer" class="footer__link-item">Weibo<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://music.163.com/#/artist?id=12236222" target="_blank" rel="noopener noreferrer" class="footer__link-item">NetEase Music<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://space.bilibili.com/72913460" target="_blank" rel="noopener noreferrer" class="footer__link-item">Bilibili<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">Useful site</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://roadmap.sh" target="_blank" rel="noopener noreferrer" class="footer__link-item">Tech roadmap<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Tech Blog</a></li><li class="footer__item"><a class="footer__link-item" href="/life">Life</a></li><li class="footer__item"><a href="https://github.com/Carrgan" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://blog.csdn.net/Carrgan" target="_blank" rel="noopener noreferrer" class="footer__link-item">CSDN<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Docusaurus<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://react-spring.dev/" target="_blank" rel="noopener noreferrer" class="footer__link-item">React-Spring<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="margin-bottom--sm"><img src="/img/logo-with-text.svg" alt="Carrgan Universe Logo" class="footer__logo themedComponent_mlkZ themedComponent--light_NVdE" width="160" height="51"><img src="/img/logo-with-text.svg" alt="Carrgan Universe Logo" class="footer__logo themedComponent_mlkZ themedComponent--dark_xIcU" width="160" height="51"></div><div class="footer__copyright">Copyright © 2024 Carrgan. All Rights Reserved</div></div></div></footer></div>
+</body>
+</html>
